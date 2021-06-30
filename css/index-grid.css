@@ -48,33 +48,32 @@ body {
 
 .workGrid {
   padding-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-areas:
+  'myArea myArea'
+  'myArea myArea';
+  grid-template-columns: 50% 50% 50% 50%;
   justify-content: center;
 }
 
 .caseStudyOne{
-  background: url("images/case_study_one.png") no-repeat fixed center;
-  width: 529px;
-  height: 372px;  
+  grid-area: myArea;
+  background: url("images/case_study_one.png") no-repeat fixed center;  
 }
 
 .caseStudyTwo{
+  grid-area: myArea;
   background: url("./images/case_study_two.png");
-  width: 529px;
-  height: 372px;
 }
 
 .caseStudyThree{
+  grid-area: myArea;
   background: url("images/case_study_three.png");
-  width: 529px;
-  height: 372px;
 }
 
 .caseStudyFour{
+  grid-area: myArea;
   background: url("./images/case_study_four.png");
-  width: 529px;
-  height: 372px;
 }
 
 
@@ -127,6 +126,13 @@ body {
 
 @media all and (min-width: 600px) {
   .aside { flex: 1 0 0; }
+  .workGrid {
+    grid-template-areas: 
+    "myArea"
+    "myArea"
+    "myArea"
+    "myArea"
+  }
   /* .caseStudyOne {width:264px;}
   .caseStudyTwo {width:264px;}
   .caseStudyThree {width:264px;}
@@ -139,10 +145,6 @@ body {
   .main    { order: 2; }
   .aside-2 { order: 3; }
   .cta  { order: 4; }
-  .caseStudyOne {width:528px;}
-  .caseStudyTwo {width:528px;}
-  .caseStudyThree {width:528px;}
-  .caseStudyFour {width:528px;}
 }
 
 body {
